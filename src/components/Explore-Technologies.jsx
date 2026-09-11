@@ -1,9 +1,18 @@
-import { useState } from "react";
-import technologies from "../data/technologies.json";
+import { use, useState } from "react";
+
 import TechnologyCard from "./TechnologyCard";
 import { toast } from "react-toastify";
 
+async function getTechnologies() {
+  const res = await fetch("/technologies.json");
+  const data = await res.json();
+  return data;
+}
+
+const technologiesPromise = getTechnologies();
+
 export default function ExploreTechnologies() {
+  const technologies = use(technologiesPromise);
   // Event Handler
 
   const [count, setCount] = useState([]);
@@ -39,8 +48,8 @@ export default function ExploreTechnologies() {
         Pick one technology per category to build your ideal stack.
       </p>
       {/* 12 Technologies Card */}
-      <div className="flex">
-        <div className="w-[85%] grid grid-cols-3 gap-6 ">
+      <div className="flex flex-col lg:flex-row">
+        <div className="w-full lg:w-[85%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {technologies.map((technology) => (
             <TechnologyCard
               key={technology.id}
@@ -51,12 +60,14 @@ export default function ExploreTechnologies() {
           ))}
         </div>
         {/* Your Stack secction */}
-        <div className="w-[15%] pl-6">
+        <div className="w-full lg:w-[15%] pl-6">
           <div className="border border-gray-300 rounded-2xl p-5">
-            <h2 className="font-bold text-lg">Your Stack</h2>
-            <span className="bg-gray-200 rounded-full px-2 py-1 text-sm">
-              {count.length}
-            </span>
+            <div className="flex justify-between items-center">
+              <h2 className="font-bold text-lg">Your Stack</h2>
+              <span className="  bg-gray-200 rounded-full px-2 py-1 text-sm">
+                {count.length}
+              </span>
+            </div>
             <div>
               {count.length === 0 && (
                 <p className="text-gray-400 text-sm text-center py-8">
@@ -66,7 +77,7 @@ export default function ExploreTechnologies() {
               {count.map((technology) => (
                 <div
                   key={technology.id}
-                  className="flex items-center gap-3 border-gray-200 py-3"
+                  className="flex items-center gap-3 border-b border-gray-200 py-3"
                 >
                   <img src={technology.icon} alt="" className="w-7 h-7" />
 
