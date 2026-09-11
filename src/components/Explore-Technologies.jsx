@@ -103,7 +103,7 @@ export default function ExploreTechnologies() {
             {/* Remove All button */}
             <button
               onClick={removeAll}
-              className="w-full mt4 border-red-300 text-red-600 py-2 rounded-lg hover:bg-red-200"
+              className="w-full mt-4 border-red-300 text-red-600 py-2 rounded-lg hover:bg-red-200"
             >
               Remove All
             </button>

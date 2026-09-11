@@ -2,13 +2,13 @@ import bannerLogo from "../../assets/banner-stack.png";
 
 export default function Hero() {
   return (
-    <div className="inter-font container mx-auto max-w-7xl flex justify-between mt-[80px] mb-[50px] items-center">
+    <div className="inter-font container mx-auto max-w-7xl flex flex-col lg:flex-row justify-between mt-[80px] mb-[50px] items-center gap-10">
       {/* LEFT */}
       <div className="">
         <h1 className=" text-[40px] font-extrabold leading-10">
           Build Your Ideal
           <span>
-            <h1 className="bg-linear-to-r from-orange-500 via-pink-500 to-violet-600  bg-clip-text text-transparent">
+            <h1 className="brand-gradient  bg-clip-text text-transparent">
               Development Stack
             </h1>
           </span>
@@ -24,7 +24,7 @@ export default function Hero() {
           <span>next project.</span>
         </p>
         <div className="flex gap-5 ">
-          <button className="bg-linear-to-r from-orange-500 via-pink-500 to-violet-600 text-white px-6 py-3 rounded-md">
+          <button className="brand-gradient  text-white px-6 py-3 rounded-md">
             Explore Technologies
           </button>
           <button className="border-2 border-gray-200 rounded-md px-6 py-3 ">
