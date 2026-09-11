@@ -46,7 +46,7 @@ export default function TechnologyCard({ technology, onAddToStack, isAdded }) {
       </div>
 
       <button
-        className="bg-black text-white w-full p-3 rounded-lg my-5"
+        className="bg-black text-white w-full p-3 rounded-lg my-5 hover:bg-gray-700"
         onClick={() => onAddToStack(technology)}
         disabled={isAdded}
       >
