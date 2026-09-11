@@ -4,6 +4,7 @@ import ExploreTechnologies from "./components/Explore-Technologies";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Suspense } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <ExploreTechnologies></ExploreTechnologies>
       </Suspense>
       <ToastContainer></ToastContainer>
+      <Footer></Footer>
     </div>
   );
 }
