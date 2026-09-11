@@ -30,12 +30,12 @@ export default function TechnologyCard({ technology, onAddToStack, isAdded }) {
         </span>
       </div>
 
-      <h2 className="pt-4 pb-3 font-extrabold ">{technology.name}</h2>
-      <p className="jakarta-font pb-4 text-gray-400 text-sm border-b border-gray-300">
+      <h2 className="pt-4 pb-3 font-extrabold text-xl ">{technology.name}</h2>
+      <p className="jakarta-font pb-4 text-gray-400 text-sm border-b border-gray-300 leading-6">
         {technology.description}
       </p>
 
-      <div className="flex justify-between mt-2">
+      <div className="flex flex-wrap justify-between items-center gap-2 mt-2">
         <span className="bg-gray-100 rounded-full pl-2 pr-2 jakarta-font text-gray-600 ">
           {technology.category}
         </span>
