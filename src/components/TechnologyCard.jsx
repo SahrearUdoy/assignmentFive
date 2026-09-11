@@ -1,4 +1,4 @@
-export default function TechnologyCard({ technology }) {
+export default function TechnologyCard({ technology, onAddToStack, isAdded }) {
   return (
     <div className="border border-gray-300 rounded-2xl p-5">
       <div className="flex justify-between">
@@ -36,15 +36,21 @@ export default function TechnologyCard({ technology }) {
       </p>
 
       <div className="flex justify-between mt-2">
-        <span className="bg-gray-200 rounded-sm pl-2 pr-2 jakarta-font text-gray-600 ">
+        <span className="bg-gray-100 rounded-full pl-2 pr-2 jakarta-font text-gray-600 ">
           {technology.category}
         </span>
         <span className="text-gray-600">{technology.difficulty}</span>
-        <span>{technology.rating}</span>
+        <span className="text-gray-600 text-sm">
+          <span className="text-yellow-500">★</span> {technology.rating}
+        </span>
       </div>
 
-      <button className="bg-black text-white w-full p-3 rounded-lg my-5">
-        Add to Stack
+      <button
+        className="bg-black text-white w-full p-3 rounded-lg my-5"
+        onClick={() => onAddToStack(technology)}
+        disabled={isAdded}
+      >
+        {isAdded ? "Added to Stack" : "Add to Stack"}
       </button>
     </div>
   );
