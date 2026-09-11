@@ -4,7 +4,7 @@ export default function TechnologyCard({ technology }) {
       <div className="flex justify-between">
         <img src={technology.icon} alt="" className="w-6 h-6" />
         <span
-          className={` p-2 ${
+          className={` px-3 py-1 rounded-4xl ${
             technology.badge === "Popular"
               ? "bg-blue-200 text-blue-700"
               : technology.badge === "Essential"
@@ -23,23 +23,27 @@ export default function TechnologyCard({ technology }) {
                             ? "bg-lime-300 text-lime-700"
                             : technology.badge === "Versatile"
                               ? "bg-red-200 text-red-700"
-                              : ""
+                              : "bg-gray-200 text-gray-500"
           }`}
         >
           {technology.badge}
         </span>
       </div>
 
-      <h2 className="pt-4 pb-3">{technology.name}</h2>
-      <p className="pb-4">{technology.description}</p>
+      <h2 className="pt-4 pb-3 font-extrabold ">{technology.name}</h2>
+      <p className="jakarta-font pb-4 text-gray-400 text-sm border-b border-gray-300">
+        {technology.description}
+      </p>
 
-      <div className="flex justify-between">
-        <span>{technology.category}</span>
-        <span>{technology.difficulty}</span>
+      <div className="flex justify-between mt-2">
+        <span className="bg-gray-200 rounded-sm pl-2 pr-2 jakarta-font text-gray-600 ">
+          {technology.category}
+        </span>
+        <span className="text-gray-600">{technology.difficulty}</span>
         <span>{technology.rating}</span>
       </div>
 
-      <button className="bg-black text-white w-full p-3 rounded-lg">
+      <button className="bg-black text-white w-full p-3 rounded-lg my-5">
         Add to Stack
       </button>
     </div>
