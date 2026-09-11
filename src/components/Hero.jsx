@@ -2,7 +2,7 @@ import bannerLogo from "../../assets/banner-stack.png";
 
 export default function Hero() {
   return (
-    <div className="container mx-auto max-w-7xl flex justify-between mt-[80px] mb-[50px] items-center">
+    <div className="inter-font container mx-auto max-w-7xl flex justify-between mt-[80px] mb-[50px] items-center">
       {/* LEFT */}
       <div className="">
         <h1 className=" text-[40px] font-extrabold leading-10">

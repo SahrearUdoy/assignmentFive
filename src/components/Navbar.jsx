@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <div className="border-b border-gray-300 py-4">
+    <div className="inter-font border-b border-gray-300 py-4">
       <nav className="flex justify-between container mx-auto max-w-7xl">
         {/* logos */}
         <div className="">
